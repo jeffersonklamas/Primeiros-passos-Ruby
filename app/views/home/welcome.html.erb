@@ -1,0 +1,16 @@
+<%# Isto é um comentário %>
+
+<h1>Bem-vindo ao Taks List</h1>
+<p>Isto é uma página Html</p>
+<h3>Sua lista de tarefas</h3>
+<!-- Isso é um comentário -->
+
+<% @tasks.each do |task| %>
+<%= task.description %>
+<!-- Caminho para editar objeto especifico -->
+<%= link_to 'Editar', edit_task_path(task) %>
+<%= link_to 'Apagar', task_path(task), method: :delete, data: { confirm: 'Quer apagar esta tarefa?'} %>
+<% end %>
+<br>
+<br>
+<em>Criada em <%= Date.today %></em>
